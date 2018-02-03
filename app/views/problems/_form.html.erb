@@ -1,34 +1,35 @@
-<%= form_with(model: problem, local: true) do |form| %>
-  <% if problem.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(problem.errors.count, "error") %> prohibited this problem from being saved:</h2>
+<div class='col-md-8'> 
+  <%= form_with(model: problem, local: true) do |form| %>
+    <% if problem.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(problem.errors.count, "error") %> prohibited this problem from being saved:</h2>
 
-      <ul>
-      <% problem.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% problem.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.text_field :title, class: 'form-control', placeholder: 'Title' %>
     </div>
+
+    <div class="form-group">
+      <%= form.text_field :description, class: 'form-control', placeholder: 'Description' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.text_area :body, class: 'form-control', rows: 15, placeholder: 'Content' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit "Submit", class: 'actions' %>
+    </div>
+    
   <% end %>
-
-  <div class="form-group">
-    <%= form.text_field :title, class: 'form-control', placeholder: 'Title' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.text_field :description, class: 'form-control', placeholder: 'Description' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.text_area :body, class: 'form-control', rows: 15, placeholder: 'Content' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.submit "Submit", class: 'actions' %>
-  </div>
-  
-<% end %>
-
+</div>
 
   
   

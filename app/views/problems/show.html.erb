@@ -1,19 +1,17 @@
 <p id="notice"><%= notice %></p>
+<div class="col-sm-8 blog-main">
 
-<p>
-  <strong>Title:</strong>
-  <%= @problem.title %>
-</p>
+  <h2><%= @problem.title %></h2>
+  
+  <p>
+    <%= @problem.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @problem.description %>
-</p>
+  <div class="card">
+    <%= markdown @problem.body %>
+  </div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @problem.body %>
-</p>
+  <%= link_to 'Edit', edit_problem_path(@problem), class: 'btn btn-primary' %> |
+  <%= link_to 'Back', problems_path, class: 'btn btn-primary' %>
 
-<%= link_to 'Edit', edit_problem_path(@problem) %> |
-<%= link_to 'Back', problems_path %>
+</div>

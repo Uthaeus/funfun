@@ -9,7 +9,7 @@
           <p class="blog-post-meta">Published <%= distance_of_time_in_words(problem.created_at, Time.now) %> ago</p>
 
           <p>
-            <%= problem.body %>
+            <%= markdown problem.body %>
           </p>
         </div><!-- /.blog-post -->
       <% end %> 
