@@ -55,6 +55,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'petergate', '~> 1.8', '>= 1.8.1'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
+gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.2'
+gem 'daemons', '~> 1.2', '>= 1.2.6'
 
 
 

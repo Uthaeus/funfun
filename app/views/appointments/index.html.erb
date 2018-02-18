@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Appointments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone number</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= link_to appointment.id, appointment_path(appointment) %></td>
+        <td><%= appointment.name %></td>
+        <td><%= appointment.phone_number %></td>
+        <td><%= appointment.time %></td>
+        <td><%=l appointment.created_at %></td>
+        <td>
+          <%= link_to "Edit", 
+                      edit_appointment_path(appointment), :class => 'btn btn-default btn-xs' %>
+          <%= link_to "Delete",
+                      appointment_path(appointment),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Appointment', new_appointment_path %>
