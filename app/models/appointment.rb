@@ -4,6 +4,8 @@ class Appointment < ApplicationRecord
 
   after_create :reminder
 
+  # config.time_zone = 'Mountain Time (US & Canada)'
+
   def reminder
     @twilio_number = ENV['TWILIO_NUMBER']
     account_sid = ENV['TWILIO_ACCOUNT_SID']
@@ -23,5 +25,5 @@ class Appointment < ApplicationRecord
   end
 
   handle_asynchronously :reminder, :run_at => Proc.new { |i| i.when_to_run }
-end
+
 end
