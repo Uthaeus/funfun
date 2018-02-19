@@ -7,7 +7,7 @@ class Appointment < ApplicationRecord
   # config.time_zone = 'Mountain Time (US & Canada)'
 
   def reminder
-    @twilio_number = ENV['TWILIO_NUMBER']
+    @twilio_number = ENV['TWILIO_PHONE_NUMBER']
     account_sid = ENV['TWILIO_ACCOUNT_SID']
     @client = Twilio::REST::Client.new account_sid, ENV['TWILIO_AUTH_TOKEN']
     time_str = ((self.time).localtime).strftime("%I:%M%p on %b. %d, %Y")
@@ -20,7 +20,7 @@ class Appointment < ApplicationRecord
   end
 
   def when_to_run
-    minutes_before_appointment = 30.minutes
+    minutes_before_appointment = 1.day
     time - minutes_before_appointment
   end
 

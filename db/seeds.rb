@@ -1,4 +1,4 @@
-User.create!(email: 'test@test.com', name: 'HomerJ', password: 'asdfasdf', password_confirmation: 'asdfasdf')
+User.create!(email: 'test@test.com', name: 'HomerJ', password: 'asdfasdf', password_confirmation: 'asdfasdf', phone_number: '3852090393', roles: 'admin')
 
 puts "1 user created"
 
