@@ -58,6 +58,8 @@ gem 'coderay', '~> 1.1', '>= 1.1.2'
 gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.2'
 gem 'daemons', '~> 1.2', '>= 1.2.6'
 gem 'twitter-bootstrap-rails', '~> 4.0'
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
+gem 'twilio-ruby', '~> 5.6', '>= 5.6.3'
 
 
 
